@@ -7,6 +7,7 @@ import Private from './pages/Private';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import auth from './lib/auth-service';
+import { AuthProvider } from './lib/auth-context';
 import './App.css';
 
 class App extends Component {
@@ -60,15 +61,15 @@ class App extends Component {
         return <div>Loading</div>
       default:
         return (
-          <div>
+          <AuthProvider value={{ isLogged, user, logout: this.logoutUser }}>
             <h1>Basic React Authentication</h1>
-            <Navbar isLogged={isLogged} user={user} logoutUser={this.logoutUser} />
+            <Navbar />
             <Switch>
               <AnonRoute path="/signup" component={Signup} setUser={this.setUser} isLogged={isLogged} />
               <AnonRoute path="/login" component={Login} setUser={this.setUser} isLogged={isLogged} />
               <PrivateRoute path="/private" component={Private} isLogged={isLogged} user={user} />
             </Switch>
-          </div>
+          </AuthProvider>
         );
     }
   }
