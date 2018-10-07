@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
-import { AuthConsumer } from '../lib/auth-context';
+import { AuthConsumer } from '../components/AuthProvider';
 
 export default class Navbar extends Component {
-
   render() {
     return (
       <AuthConsumer>
