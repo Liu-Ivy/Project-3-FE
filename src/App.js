@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
-import {BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import {Switch} from 'react-router-dom'
 import PrivateRoute from './components/PrivateRoute';
+import AnonRoute from './components/AnonRoute';
+import Navbar from './components/Navbar';
 import Private from './pages/Private';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
@@ -53,7 +55,6 @@ class App extends Component {
 
   render() {
     const { isLogged, user, status } = this.state;
-    const { username } = user;
     switch (status) {
       case 'loading':
         return <div>Loading</div>
@@ -61,23 +62,15 @@ class App extends Component {
         return (
           <div>
             <h1>Basic React Authentication</h1>
-            { isLogged && 
-              <div>
-                <p>username: { username }</p>
-                <p onClick={this.logoutUser}>Logout</p>
-              </div>
-            }
-            <Router>
-              <Switch>
-                <Route path="/signup" render={() => <Signup setUser={this.setUser} /> } />
-                <Route path="/login" render={() => <Login setUser={this.setUser} /> } />
-                <PrivateRoute path="/private" component={Private} isLogged={isLogged} user={user} />
-              </Switch>
-            </Router>
+            <Navbar isLogged={isLogged} user={user} logoutUser={this.logoutUser} />
+            <Switch>
+              <AnonRoute path="/signup" component={Signup} setUser={this.setUser} isLogged={isLogged} />
+              <AnonRoute path="/login" component={Login} setUser={this.setUser} isLogged={isLogged} />
+              <PrivateRoute path="/private" component={Private} isLogged={isLogged} user={user} />
+            </Switch>
           </div>
         );
     }
-    
   }
 }
 
