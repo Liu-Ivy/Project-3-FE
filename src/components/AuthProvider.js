@@ -6,6 +6,14 @@ export const AuthContext = React.createContext(
 );
 
 export const AuthConsumer = AuthContext.Consumer;
+export const withAuth = (Comp) => () => (<AuthConsumer>
+  {(authStore) => {
+    return <Comp isLogged={authStore.isLogged} user={authStore.user} logout={authStore.logout} />
+  }
+  }
+</AuthConsumer>
+)
+
 export default class AuthProvider extends Component {
   state = {
     isLogged: false,
