@@ -1,28 +1,20 @@
 import React from 'react';
 import { Route, Redirect } from 'react-router-dom';
-import { AuthConsumer } from '../components/AuthProvider';
+import { withAuth } from '../components/AuthProvider';
 
-const PrivateRoute = ({ component: Component, setUser, isLogged, ...rest }) => {
-  // console.log({ component: Component, user, ...rest })
+const AnonRoute = ({ component: Component, isLogged, setUser, ...rest }) => {
   return (
-    <AuthConsumer>
-    { authStore => {
-        return (
-          <Route
-            {...rest}
-            render={props => {
-              if (!authStore.isLogged) {
-                return <Component {...props} setUser={authStore.setUser} />
-              } else {
-                return <Redirect to={{ pathname: '/private', state: { from: props.location } }} />
-              }
-            }
-            }
-          />
-        )
+    <Route
+      {...rest}
+      render={props => {
+        if (!isLogged) {
+          return <Component {...props} setUser={setUser} />
+        } else {
+          return <Redirect to={{ pathname: '/private', state: { from: props.location } }} />
+        }
       }
-    }
-    </AuthConsumer>
+      }
+    />
   )
 }
-export default PrivateRoute;
+export default withAuth()(AnonRoute);

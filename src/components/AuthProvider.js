@@ -5,14 +5,26 @@ export const AuthContext = React.createContext(
   // authStore // default value
 );
 
-export const AuthConsumer = AuthContext.Consumer;
-export const withAuth = (Comp) => () => (<AuthConsumer>
-  {(authStore) => {
-    return <Comp isLogged={authStore.isLogged} user={authStore.user} logout={authStore.logout} />
+export const { Provider, Consumer }  = AuthContext.Consumer;
+
+export const withAuth = () => (Comp) => {
+  return class WithAuth extends Component {
+    render() {
+      return (
+        <Consumer>
+          {(authStore) => {
+            return <Comp 
+              isLogged={authStore.isLogged}
+              user={authStore.user}
+              logout={authStore.logout}
+              setUser={authStore.setUser}
+              {...this.props} />
+          }}
+        </Consumer>
+      )
+    }    
   }
-  }
-</AuthConsumer>
-)
+}
 
 export default class AuthProvider extends Component {
   state = {
@@ -65,9 +77,9 @@ export default class AuthProvider extends Component {
         return <div>Loading</div>
       default:
         return (
-          <AuthContext.Provider value={{ isLogged, user, logout: this.logoutUser, setUser: this.setUser }}>
+          <Provider value={{ isLogged, user, logout: this.logoutUser, setUser: this.setUser }}>
             {children}
-          </AuthContext.Provider>    
+          </Provider>    
         );
     }
   }

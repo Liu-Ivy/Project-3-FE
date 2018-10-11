@@ -10,18 +10,13 @@ class Login extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    const username = this.state.username;
-    const password = this.state.password;
+    const { username, password } = this.state
 
     auth.login({ username, password })
-      .then( (user) => {
-        this.setState({
-            username: "",
-            password: "",
-        });
-        this.props.setUser(user)
-      })
-      .catch( error => console.log(error) )
+    .then( (user) => {
+      this.props.setUser(user)
+    })
+    .catch( error => console.log(error) )
   }
 
   handleChange = (event) => {  
