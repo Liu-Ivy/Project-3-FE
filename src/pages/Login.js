@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import auth from '../lib/auth-service';
-// import { AuthConsumer } from '../components/AuthProvider';
 
 class Login extends Component {
   state = {
