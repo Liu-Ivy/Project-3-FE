@@ -7,19 +7,21 @@ import Private from './pages/Private';
 import Signup from './pages/Signup';
 import Login from './pages/Login';
 import AuthProvider from './components/AuthProvider';
-import './App.css';
+
 
 class App extends Component {
   render() {
     return (
       <AuthProvider>
-        <h1>Basic React Authentication</h1>
-        <Navbar />
-        <Switch>
-          <AnonRoute path="/signup" component={Signup} />
-          <AnonRoute path="/login" component={Login} />
-          <PrivateRoute path="/private" component={Private} />
-        </Switch>
+        <div className="container">
+          <h1>Basic React Authentication</h1>
+          <Navbar />
+          <Switch>
+            <AnonRoute path="/signup" component={Signup} />
+            <AnonRoute path="/login" component={Login} />
+            <PrivateRoute path="/private" component={Private} />
+          </Switch>
+        </div>
       </AuthProvider>
     )
   }
