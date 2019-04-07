@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
-import auth from "../lib/auth-service";
-
+import { withAuth } from "../lib/AuthProvider";
 class Signup extends Component {
   state = {
     username: "",
@@ -10,8 +9,8 @@ class Signup extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    const username = this.state.username;
-    const password = this.state.password;
+    const { username, password } = this.state;
+    this.props.signup({ username, password });
   };
 
   handleChange = event => {
@@ -40,7 +39,6 @@ class Signup extends Component {
           />
           <input type="submit" value="Signup" />
         </form>
-
         <p>
           Already have account?
           <Link to={"/login"}> Login</Link>
@@ -50,4 +48,4 @@ class Signup extends Component {
   }
 }
 
-export default Signup;
+export default withAuth(Signup);

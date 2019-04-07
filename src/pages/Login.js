@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import auth from "../lib/auth-service";
+import { withAuth } from "../lib/AuthProvider";
 
 class Login extends Component {
   state = {
@@ -10,6 +10,7 @@ class Login extends Component {
   handleFormSubmit = event => {
     event.preventDefault();
     const { username, password } = this.state;
+    this.props.login({ username, password });
   };
 
   handleChange = event => {
@@ -41,4 +42,4 @@ class Login extends Component {
   }
 }
 
-export default Login;
+export default withAuth(Login);
