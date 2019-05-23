@@ -1,22 +1,35 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
+
 class Navbar extends Component {
+
+  // declare a method
+      // inside this method call this.props.logout
+      handleOnClick = () => {
+        console.log("click")
+        this.props.logout();
+      };
+  
+  
   render() {
-    const { user, logout, isLoggedin } = this.props;
+    // const { isLoggedin } = this.props;
     return (
       <div>
-        {isLoggedin ? (
+        {/* {isLoggedin ? (
           <>
             <p>username: {user.username}</p>
             <button onClick={logout}>Logout</button>
           </>
         ) : (
-          <>
-            <Link to="/login">Login</Link>
-            <Link to="/signup">Signup</Link>
-          </>
-        )}
+          <> */}
+            <Link to="/topics">View All</Link>
+            <Link to="/profile">My Profile</Link>
+      
+            <div onClick={()=>{this.handleOnClick()}}>log out</div>
+         
+          {/* </>
+        )} */}
       </div>
     );
   }

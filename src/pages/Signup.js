@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
+import Navbar from "../components/Navbar";
+
 class Signup extends Component {
   state = {
     username: "",
@@ -22,6 +24,8 @@ class Signup extends Component {
     const { username, password } = this.state;
     return (
       <div>
+        <Navbar />
+        
         <form onSubmit={this.handleFormSubmit}>
           <label>Username:</label>
           <input

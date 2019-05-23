@@ -4,7 +4,7 @@ class Auth {
   constructor() {
     this.auth = axios.create({
       baseURL: "http://localhost:5000",
-      withCredentials: true
+      // withCredentials: true
     });
   }
 
@@ -12,14 +12,21 @@ class Auth {
     const { username, password } = user;
     return this.auth
       .post("/auth/signup", { username, password })
-      .then(({ data }) => data);
+      .then(({ data }) => {
+        console.log(data)
+        return data
+      });
   }
 
   login(user) {
     const { username, password } = user;
     return this.auth
       .post("/auth/login", { username, password })
-      .then(({ data }) => data);
+      .then(({ data }) => {
+        console.log('data',data)
+      return data
+      }
+      );
   }
 
   logout() {

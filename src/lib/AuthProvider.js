@@ -72,6 +72,7 @@ class AuthProvider extends Component {
 
   login = user => {
     const { username, password } = user;
+    console.log('user', user)
     auth
       .login({ username, password })
       .then(user => {
@@ -84,6 +85,7 @@ class AuthProvider extends Component {
   };
 
   logout = () => {
+    console.log('click2')
     auth
       .logout()
       .then(() => {
