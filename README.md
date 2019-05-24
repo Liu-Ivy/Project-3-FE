@@ -37,7 +37,11 @@ Homepage:
 ## Routes
 | Method | Path | Component | Permissions | Behavior | 
 |--------|------|--------|--| -------|
+<<<<<<< HEAD
 | `get`  | `/` | HomePageComponent| Signup Login button |
+=======
+| `get`  | `/` | HomePageComponent| public | just promotional copy|
+>>>>>>> c432c20db4c91325d1a4a2113c01317d781e0ac9
 | `post` | `/auth/signup` | SignupPageComponent| anon only| signup form, link to login, navigate to homepage after signup|
 | `post` | `/auth/login` | LoginPageComponent | anon only |login form, link to signup, navigate to homepage after login |
 | `post` | `/auth/logout` | n/a| anon only | navigate to homepage after logout, expire session |
@@ -58,7 +62,11 @@ Homepage:
   - Signup: Username, Password, submit button
   - Login: Username, Password, submit button
   - All Topics: Reading, Writing, Festival, warm up activities, HSK, Tool Book
+<<<<<<< HEAD
   - My Profile(Private): Username, Location, Share idea(Topic, description, duration, img),submit button
+=======
+  - My Profile: Username, Location, Share idea(Topic, description, duration, img),submit button
+>>>>>>> c432c20db4c91325d1a4a2113c01317d781e0ac9
 - Plan component
   - Topic: (display items)
   - Item: img, description, duration
