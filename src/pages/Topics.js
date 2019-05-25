@@ -23,7 +23,7 @@ class Topics extends Component {
         <Navbar />
         <h1>All Topics</h1>
           {this.state.topics.map((topic)=>{
-            return <TopicCard title={topic.topic}/>
+            return <TopicCard title={topic.title} image={topic.image} />
           })}
           
       </div>
