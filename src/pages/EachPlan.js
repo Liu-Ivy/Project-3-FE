@@ -1,25 +1,29 @@
 import React from 'react'
 
 import { withAuth } from "../lib/AuthProvider";
+import planService from "../lib/plan-service";
+
 
 class EachPlan extends React.Component {
   // const { topic, image, description, duration } = props
-  staste = {
+  state = {
     plan: {}
   }
   componentDidMount(){
-    // topic.getAll()
-    //   .then((topics)=>this.setState({topics: topics}))
+    planService.getPlan(this.props.match.params.id)
+      .then((onePlan)=>this.setState({plan: onePlan}))
   }
 render(){
 
+  console.log('plan', this.state.plan)
   return (
     <div className="planeCard">
+      <h2>{this.state.plan.title}</h2>
+
       {/* <h2>{topic}</h2>
       <img src={image} alt=""/>
       <p>{description}</p>    
       <p>{duration}</p>  */}
-      <h2>EachPlan</h2>
     </div>
   )
 }

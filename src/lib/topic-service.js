@@ -15,8 +15,6 @@ class Topic {
         return data
       });
   }
-
-  
 }
 
 const topic = new Topic();
