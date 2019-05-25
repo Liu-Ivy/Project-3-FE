@@ -1,0 +1,16 @@
+
+.topicCard {
+  border: 1px solid black;
+  height: 150px;
+  width: 200px;
+  margin: 10px;
+  color: white;
+  font-size: 2rem;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.topicCard p {
+  text-align: center;
+}

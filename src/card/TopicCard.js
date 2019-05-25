@@ -1,19 +1,22 @@
 import React from 'react'
+import './card.css'
 
-const style = {
-  height: '80px',
-  width: '100px',
-  margin: '10px'
-}
+// const style = {
+//   height: '80px',
+//   width: '100px',
+//   margin: '10px'
+// }
 
 function TopicCard(props) {
-  console.log('props.image', props.image)
+  const bg = require(`../images/${props.image}`)
   return (
-    <div className='topicCard'>
-       <p>{props.topic}</p>
-       <img src={require(`../images/${props.image}`)} alt="" style={style}/>
-    </div>
+    <a href={`./topics/${props.topic.toLowerCase()}`}>
+      <div className='topicCard' style ={{ backgroundImage: "url("+bg+")" }}>
+        <p>{props.topic}</p>
+      </div>
+    </a>
   )
 }
 
 export default TopicCard
+
