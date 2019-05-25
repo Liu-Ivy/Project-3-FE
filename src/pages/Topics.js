@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
 import Navbar from "../components/Navbar";
 import topic from '../lib/topic-service';
+import TopicCard from "../card/TopicCard";
+
 
 class Topics extends Component {
   state = {
@@ -21,9 +23,9 @@ class Topics extends Component {
         <Navbar />
         <h1>All Topics</h1>
           {this.state.topics.map((topic)=>{
-            console.log(topic.topic)
-            return <p>{topic.topic}</p>
+            return <TopicCard title={topic.topic}/>
           })}
+          
       </div>
     );
   }

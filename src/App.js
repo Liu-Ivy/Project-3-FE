@@ -11,7 +11,8 @@ import Topics from "./pages/Topics";
 import PrivateRoute from "./components/PrivateRoute";
 import AnonRoute from "./components/AnonRoute";
 import AuthProvider from "./lib/AuthProvider";
-import EachTopic from "./components/EachTopic";
+import EachTopic from "./pages/EachTopic";
+import EachPlan from "./pages/EachPlan";
 
 class App extends Component {
   render() {
@@ -23,7 +24,8 @@ class App extends Component {
             <AnonRoute path="/signup" component={Signup} />
             <AnonRoute path="/login" component={Login} />
             <PrivateRoute exact path="/topics" component={Topics} />
-            <PrivateRoute path="/topics:id" component={EachTopic} />
+            <PrivateRoute path="/topics/:topic" component={EachTopic} />
+            <PrivateRoute path="/topic/:id" component={EachPlan} />
             <PrivateRoute path="/profile" component={Profile} />
           </Switch>
         </div>
