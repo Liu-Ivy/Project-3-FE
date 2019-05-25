@@ -6,7 +6,7 @@ function TopicCard(props) {
   return (
     <div className='topicCard'>
        {props.title}
-       <img src={require(props.image)} alt=""/>
+       <img src={props.image} alt=""/>
     </div>
   )
 }

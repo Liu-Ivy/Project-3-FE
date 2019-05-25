@@ -1,9 +1,12 @@
-import React from 'react'
+import React from 'react';
 
-function PlanCard() {
+
+function PlanCard(props) {
+
   return (
-    <div>
-      
+    <div className="planeCard">
+      {props.PlanCard}
+      <h2>PlanCard</h2>
     </div>
   )
 }
