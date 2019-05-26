@@ -1,29 +1,36 @@
 import React from 'react'
-
+import Navbar from "../components/Navbar";
 import { withAuth } from "../lib/AuthProvider";
 import planService from "../lib/plan-service";
 
 
+
+const style = {
+  height: '80px',
+  width: '100px',
+  margin: '10px'
+}
+
 class EachPlan extends React.Component {
-  // const { topic, image, description, duration } = props
   state = {
     plan: {}
   }
   componentDidMount(){
     planService.getPlan(this.props.match.params.id)
-      .then((onePlan)=>this.setState({plan: onePlan}))
+    .then((onePlan)=>this.setState({plan: onePlan}))
   }
-render(){
-
+  render(){
+    const { title, topic, image, description, duration } = this.state.plan  
   console.log('plan', this.state.plan)
   return (
     <div className="planeCard">
-      <h2>{this.state.plan.title}</h2>
-
-      {/* <h2>{topic}</h2>
-      <img src={image} alt=""/>
+      <Navbar />
+      <h2>{title}</h2>
+      <h2>{topic}</h2>
+      <img src={image} alt="" style={style}/>
       <p>{description}</p>    
-      <p>{duration}</p>  */}
+      <p>{duration}</p> 
+
     </div>
   )
 }

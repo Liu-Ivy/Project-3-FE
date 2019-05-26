@@ -12,9 +12,9 @@ This is a platform for teachers to make their job easier. The website has create
 -  **Logout:** As a user I can logout from the platform so no one else can use it
 -  **Add Plan** As a user I can add an idea so that I can share it with the community
 -  **Delete Plan** As a user I can delete an idea so no one can see it again
--  **List Plan** As a user I want to see all lesson plans so that I can choose one to see
+-  **List Plan** As a user I want to see all NewPlan plans so that I can choose one to see
 most
--  **Create Your Lesson Plan** As a user I choose the idea I like in to a Lesson Plan
+-  **Create Your NewPlan Plan** As a user I choose the idea I like in to a NewPlan Plan
 
 ## Backlog
 

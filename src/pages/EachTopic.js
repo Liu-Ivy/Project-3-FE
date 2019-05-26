@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
 import PlanCard from '../card/PlanCard';
 import plan from '../lib/plan-service';
+import Navbar from "../components/Navbar";
 
 class EachTopic extends Component {
   state = {
@@ -19,6 +20,7 @@ class EachTopic extends Component {
     // const {image_url, topic, _id} = props.topics
     return (
       <div>
+        <Navbar />
         <h2>{this.props.match.params.topic.toUpperCase()}</h2>
         {plans.map((plan) => {
          if( plan.topic.toLowerCase() === this.props.match.params.topic) {

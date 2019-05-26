@@ -9,11 +9,15 @@ const style = {
 
 function PlanCard(props) {
 
+  console.log(props)
+  
   return (
-    <div className="planeCard">
-      <p>{props.plan.title}</p>
-      <img src={require(`../images/${props.plan.image}`)} alt="" style={style}/>
-    </div>
+    <a href={`../topic/${props.plan._id}`}>
+      <div className="planeCard">
+        <p>{props.plan.title}</p>
+        <img src={props.plan.image} alt="" style={style}/>
+      </div>
+    </a>
   )
 }
 

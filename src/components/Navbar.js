@@ -23,6 +23,7 @@ class Navbar extends Component {
           </>
         ) : (
           <> */}
+           <Link to="/">Home</Link>
             <Link to="/topics">View All</Link>
             <Link to="/profile">My Profile</Link>
       
