@@ -3,17 +3,17 @@ import plan  from '../lib/plan-service';
 import './profile.css';
 import auth from '../lib/auth-service';
 
-// const style = {
-//   height: '80px',
-//   width: '100px',
-//   margin: '10px'
-// }
+const style = {
+  height: '80px',
+  width: '100px',
+  margin: '10px'
+}
 
 
 class MyInfo extends React.Component{
 
   state = {
-    imageUrl: "",
+    imageUrl: this.props.userInfo.imageUrl,
     disable: true,
   }
 
@@ -42,7 +42,7 @@ fileOnchange = (event) => {
     return (
         <div className="my-info">
         <h1>Welcome {this.props.userInfo.username}</h1>
-          {/* <img src={props.info} alt="" style={style}/> */}
+          <img src={this.state.imageUrl} alt="" style={style}/>
           <input type="file" onChange={this.fileOnchange}></input>
             {/* {this.state.disable ? <input type="submit" disabled></input> : <input type="submit"></input>} */}
         </div>
