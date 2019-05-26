@@ -1,5 +1,7 @@
 import React from 'react';
 import plan  from '../lib/plan-service';
+import './profile.css';
+import auth from '../lib/auth-service';
 
 // const style = {
 //   height: '80px',
@@ -28,12 +30,18 @@ fileOnchange = (event) => {
       disable: false,
     })
   })
-  .then()
+  .then(() => {
+    const newUser = this.props.userInfo;
+    newUser.imageUrl = this.state.imageUrl;
+    auth.updateUser(newUser)
+  })
   .catch((error) => console.log(error))
 }
   render(){
+    console.log('this.props', this.props)
     return (
-        <div className="MyInfo">
+        <div className="my-info">
+        <h1>Welcome {this.props.userInfo.username}</h1>
           {/* <img src={props.info} alt="" style={style}/> */}
           <input type="file" onChange={this.fileOnchange}></input>
             {/* {this.state.disable ? <input type="submit" disabled></input> : <input type="submit"></input>} */}
