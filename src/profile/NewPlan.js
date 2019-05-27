@@ -49,6 +49,7 @@ class NewPlan extends Component {
   }
 
   render() {
+    console.log(this.props)
     const { title, topic, description, imageUrl, duration, location  } = this.state;
     return (
       <div>  

@@ -12,10 +12,8 @@ class Profile extends Component {
     return (
       <div>
         <Navbar />
-        
         <MyInfo userInfo={this.props.user}/>
         <NewPlan />
-
       </div>
     );
   }

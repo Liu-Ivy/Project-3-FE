@@ -38,7 +38,6 @@ fileOnchange = (event) => {
   .catch((error) => console.log(error))
 }
   render(){
-    console.log('this.props', this.props)
     return (
         <div className="my-info">
         <h1>Welcome {this.props.userInfo.username}</h1>
