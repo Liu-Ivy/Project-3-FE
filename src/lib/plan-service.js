@@ -27,6 +27,15 @@ class Plan {
     return this.plan.post('/', plan)
     .then(({data}) => data)
   }
+  updatePlan(plan){
+    return this.plan.put('/', plan)
+    .then(({data})=>data)
+  }
+  deletePlan(plan){
+    return this.plan.delete('/', plan)
+    .then(({data})=>data)
+  }
+  
   imageUpload(file) {
     return this.plan.post('/image', file)
     .then(({data}) => data)
