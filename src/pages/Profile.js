@@ -41,10 +41,14 @@ class Profile extends Component {
   }
   handleEdit = (index) => {
     this.setState({ editIndex : index}) 
+  };
+  handleDelete = (id) => {
+    let plans = this.state.plans.filter(plan =>{
+      return plan.id !== id
+    });
+    this.setState({ plans: plans}) 
   }
-  handleUpdateClick = () =>{
-
-  }
+  
   
   render() {
 
@@ -60,7 +64,7 @@ class Profile extends Component {
           if( index ===  this.state.editIndex){
             return <UpdatePlan handleUpdateClick={this.handleUpdateClick} plan={plan}/> 
           }else{
-            return <MyPlanCard plan={plan} handleEdit={this.handleEdit} handleDelet={this.handleDelet} index={index}/>
+            return <MyPlanCard plan={plan} handleEdit={this.handleEdit} handleDelete ={this.handleDelete } index={index}/>
           }
          } )}
 

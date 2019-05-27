@@ -20,7 +20,8 @@ const {_id, title, imageUrl} = props.plan;
         </div>
       </a>
       <button onClick={()=>{props.handleEdit(props.index)}}>Edit</button>
-      <button>Delete</button>
+
+      <button onClick={()=>{props.handleDelete(_id)}}>Delete</button>
     </div>
 
 

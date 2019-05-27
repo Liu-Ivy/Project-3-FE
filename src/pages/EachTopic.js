@@ -24,7 +24,7 @@ class EachTopic extends Component {
         <h2>{this.props.match.params.topic.toUpperCase()}</h2>
         {plans.map((plan) => {
          if( plan.topic.toLowerCase() === this.props.match.params.topic) {
-         return <PlanCard data={plan} />
+         return <PlanCard plan={plan} />
         } else {
           return null
         }})}
