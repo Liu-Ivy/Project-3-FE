@@ -43,6 +43,7 @@ class Profile extends Component {
     this.setState({ editIndex : index}) 
   };
   handleDelete = (id) => {
+    // const { id } = this.props.match.params;
     let plans = this.state.plans.filter(plan =>{
       return plan.id !== id
     });
@@ -64,7 +65,7 @@ class Profile extends Component {
           if( index ===  this.state.editIndex){
             return <UpdatePlan handleUpdateClick={this.handleUpdateClick} plan={plan}/> 
           }else{
-            return <MyPlanCard plan={plan} handleEdit={this.handleEdit} handleDelete ={this.handleDelete } index={index}/>
+            return <MyPlanCard plan={plan} handleEdit={this.handleEdit} handleDelete ={this.handleDelete} index={index}/>
           }
          } )}
 
