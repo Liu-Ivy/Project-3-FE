@@ -3,7 +3,7 @@ import axios from 'axios';
 class ProfileService {
   constructor() {
     this.plan = axios.create({
-      baseURL: "http://localhost:4000/memes",
+      baseURL: "http://localhost:5000/profile",
       withCredentials: true,
     })
   }

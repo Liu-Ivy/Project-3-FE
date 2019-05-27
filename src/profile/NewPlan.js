@@ -58,7 +58,7 @@ class NewPlan extends Component {
           <input type="text" name="title" value={title} onChange={this.handleChange}/><br/>
           <label type="text" >topic </label>
           <select name="topic" required onChange={this.handleChange}>
-            <option value="">Choose a Topic</option>
+            <option value={topic}>Choose a Topic</option>
             <option value="reading">Reading</option>
             <option value="writing">Writing</option>
             <option value="festival">Festival</option>
