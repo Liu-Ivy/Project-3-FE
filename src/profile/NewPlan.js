@@ -23,9 +23,13 @@ class NewPlan extends Component {
   };
 
   handleFormSubmit = event => {
+    console.log("object")
     event.preventDefault();
     const { title, topic, description, imageUrl, duration, location } = this.state;
-    plan.createPlan({ title, topic, description, imageUrl, duration, location });
+    plan.createPlan({ title, topic, description, imageUrl, duration, location })
+    .then(() => {
+      this.props.handleSubmitClick()
+    })
   };
 
   handleChange = event => {
@@ -79,7 +83,7 @@ class NewPlan extends Component {
           <img src={this.state.imageUrl} alt="" style={style}/>
           
           {/* {disable ? <input type="submit" disabled></input> : <input type="submit"></input>} */}
-          <input type="submit" value='submit' />
+          <input type="submit" value='submit'/>
         </form>
         
       </div>

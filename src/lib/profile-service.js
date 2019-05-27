@@ -8,20 +8,12 @@ class ProfileService {
     })
   }
 
-  createPlan(plan) {
-    return this.plan.post('/', plan)
-    .then(({data}) => data)
-  }
-
-  getAllPlan() {
+  getUserPlan() {
     return this.plan.get('/')
-    .then(({data}) => data)
+    .then(({plans}) => plans)
   }
 
-  imageUpload(file) {
-    return this.plan.post('/image', file)
-    .then(({data}) => data)
-  }
+ 
 }
 
 const plan = new ProfileService();
