@@ -13,8 +13,13 @@ class Profile extends Component {
     plans: [],
   }
   
-  componentDidUpdate() {
-    console.log('this.props', this.props)
+  componentDidMount() {
+    console.log("mounting")
+    profile.getUserPlan()
+      .then((plans)=>{
+        plans = plans.data.plans
+        this.setState({plans})
+      })
   }
   handleClick = () => {
     const { display } = this.state
@@ -23,18 +28,19 @@ class Profile extends Component {
   
   handleSubmitClick = () => {
     const { display } = this.state
-    this.setState({ display: !display })
     profile.getUserPlan()
-      .then((dataPlan)=>{
-        this.setState({ plans: dataPlan })
+      .then((plans)=>{
+        plans = plans.data.plans
+        this.setState({
+          display: !display,
+          plans})
       })
-      .then(() => {
-        console.log('this.state.plans', this.state.plans)
-      })
+   
   }
   
   render() {
-    console.log('this.props.user', this.props.user)
+
+    const {plans} = this.state;
     return (
       <div>
         <Navbar />
@@ -45,7 +51,9 @@ class Profile extends Component {
 
         </div>
 
-        {/* <PlanCard data={data}/> */}
+        {plans && plans.map((plan)=>{
+          return <PlanCard data={plan}/>
+        } )}
       </div>
     );
   }

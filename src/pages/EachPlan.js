@@ -20,14 +20,14 @@ class EachPlan extends React.Component {
     .then((onePlan)=>this.setState({plan: onePlan}))
   }
   render(){
-    const { title, topic, image, description, duration } = this.state.plan  
+    const { title, topic, imageUrl, description, duration } = this.state.plan  
   console.log('plan', this.state.plan)
   return (
     <div className="planeCard">
       <Navbar />
       <h2>{title}</h2>
       <h2>{topic}</h2>
-      <img src={image} alt="" style={style}/>
+      <img src={imageUrl} alt="" style={style}/>
       <p>{description}</p>    
       <p>{duration}</p> 
 

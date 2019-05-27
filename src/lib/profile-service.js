@@ -10,7 +10,7 @@ class ProfileService {
 
   getUserPlan() {
     return this.plan.get('/')
-    .then(({plans}) => plans)
+    .then((plans) => plans)
   }
 
  

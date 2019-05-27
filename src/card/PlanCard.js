@@ -8,14 +8,14 @@ const style = {
 
 
 function PlanCard(props) {
-
-  console.log(props)
+const {_id, title, imageUrl} = props.data;
+  console.log(props.data)
   
   return (
-    <a href={`../topic/${props.plan._id}`}>
+    <a href={`../topic/${_id}`}>
       <div className="planeCard">
-        <p>{props.plan.title}</p>
-        <img src={props.plan.image} alt="" style={style}/>
+        <p>{title}</p>
+        <img src={imageUrl} alt="" style={style}/>
       </div>
     </a>
   )
