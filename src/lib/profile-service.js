@@ -3,7 +3,7 @@ import axios from 'axios';
 class ProfileService {
   constructor() {
     this.plan = axios.create({
-      baseURL: "http://localhost:5000/profile",
+      baseURL: process.env.REACT_APP_API_URL + "/profile",
       withCredentials: true,
     })
   }

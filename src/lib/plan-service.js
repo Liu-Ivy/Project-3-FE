@@ -3,7 +3,7 @@ import axios from "axios";
 class Plan {
   constructor() {
     this.plan = axios.create({
-      baseURL: "http://localhost:5000/plan",
+      baseURL: process.env.REACT_APP_API_URL + "/plan",
       withCredentials: true
     });
   }
@@ -31,8 +31,8 @@ class Plan {
     return this.plan.put('/', plan)
     .then(({data})=>data)
   }
-  deletePlan(plan){
-    return this.plan.delete('/', plan)
+  deletePlan(id){
+    return this.plan.delete('/'+id, plan)
     .then(({data})=>data)
   }
   

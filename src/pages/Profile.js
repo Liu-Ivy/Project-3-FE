@@ -7,6 +7,7 @@ import PlanCard from "../card/PlanCard";
 import profile from "../lib/profile-service";
 import MyPlanCard from "../profile/MyPlanCard";
 import UpdatePlan from "../profile/UpdatePlan";
+import planService from "../lib/plan-service";
 
 class Profile extends Component {
   state = {
@@ -17,7 +18,6 @@ class Profile extends Component {
   }
   
   componentDidMount() {
-    console.log("mounting")
     profile.getUserPlan()
       .then((plans)=>{
         plans = plans.data.plans
@@ -42,12 +42,17 @@ class Profile extends Component {
   handleEdit = (index) => {
     this.setState({ editIndex : index}) 
   };
-  handleDelete = (id) => {
-    // const { id } = this.props.match.params;
-    let plans = this.state.plans.filter(plan =>{
-      return plan.id !== id
-    });
-    this.setState({ plans: plans}) 
+  handleDelete = (plan) => {
+    planService.deletePlan(plan._id)
+    .then(()=>{
+      profile.getUserPlan()
+      .then((plans)=>{
+        plans = plans.data.plans
+        this.setState({plans})
+      })
+    })
+
+    
   }
   
   
@@ -78,6 +83,3 @@ class Profile extends Component {
 
 export default withAuth(Profile);
 
-
-  // location: String,
-  // plans: [{type: Schema.Types.ObjectId, ref: 'Plans' }],
