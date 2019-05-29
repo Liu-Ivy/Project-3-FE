@@ -18,7 +18,7 @@ class App extends Component {
   render() {
     return (
       <AuthProvider>
-        <div className="container">
+        <div className="content">
           <Switch>
             <AnonRoute exact path="/" component={Home} />
             <AnonRoute path="/signup" component={Signup} />
@@ -33,6 +33,5 @@ class App extends Component {
     );
   }
 };
-
 
 export default App;

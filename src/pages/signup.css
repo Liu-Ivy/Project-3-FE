@@ -1,0 +1,23 @@
+.signup-page {
+  background: black url("../images/background2.jpg") center/ cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 1024px) {.home-page {background: black url("../images/background.jpg") center/ cover}}
+@media (max-width: 1024px) {.home-page {background: black url("../images/background3.jpg") center/ cover}}
+
+.form {
+  width: 300px;
+  height: 600px;
+  margin-top:30px;
+}
+.label, .input, .button{
+  margin-top: 20px;
+}
+.single-spaced, .single-spaced * {
+  line-height: 3;
+} 

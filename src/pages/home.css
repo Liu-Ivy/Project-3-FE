@@ -1,0 +1,23 @@
+.hero {
+  background: black url("../images/background2.jpg") center/ cover;
+  background-repeat: no-repeat;
+  height: 100vh;
+  width: 100vw;
+}
+
+.button {
+  margin-right:20px;
+  height:50px;
+  width:100px;
+}
+
+.subitile {
+  padding-top: 180px;
+}
+
+.single-spaced, .single-spaced * {
+  line-height: 1;
+} 
+
+@media (max-width: 1024px) {.hero {background: black url("../images/background.jpg") center/ cover}}
+@media (max-width: 1024px) {.hero {background: black url("../images/background3.jpg") center/ cover}}

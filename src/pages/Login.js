@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { withAuth } from "../lib/AuthProvider";
 import Navbar from "../components/Navbar";
 import { Link } from "react-router-dom";
+import './login.css';
 
 class Login extends Component {
   state = {
@@ -25,27 +26,31 @@ class Login extends Component {
     return (
       <div>
         <Navbar />
-          <form onSubmit={this.handleFormSubmit}>
-            <label>Username:</label>
-            <input
+         <div className="login-page">
+          <form className="form is-overaly has-text-centered single-space is-marginless is-family-monospace" onSubmit={this.handleFormSubmit}>
+            <label className="label is-size-4 has-text-weight-normal has-text-white is-normal ">Username: </label>
+            <input className="input is-rounded"
               type="text"
               name="username"
+              placeholder="username"
               value={username}
               onChange={this.handleChange}
             />
-            <label>Password:</label>
-            <input
+            <label className="label is-size-4 has-text-weight-normal has-text-white is-normal">Password: </label>
+            <input className="input is-rounded"
               type="password"
               name="password"
+              placeholder="password"
               value={password}
               onChange={this.handleChange}
             />
-            <input type="submit" value="Login" />
-          </form>
-          <p>
+            <input className="buttonds has-text-white  is-warning is-outlined is-nomral has-text-weight-bold" type="submit" value="Login" />
+          <p className="is-size-6 has-text-weight-normal has-text-white">
           Don't have account?
-          <Link to="/signup">Signup</Link>
-        </p>
+          <Link className="button has-text-white  is-warning is-outlined is-small has-text-weight-bold" to="/signup">Signup</Link>
+          </p>
+        </form>
+         </div>
       </div>
     );
   }
