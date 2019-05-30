@@ -8,6 +8,22 @@
   width: 100vw;
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+.my-plans{
+  display: flex;
+  flex-direction: row;
+  /* justify-content: center;
+  align-items: center; */
+  margin: auto;
+}
+.add-newplan{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   margin: auto;
 }
 img {

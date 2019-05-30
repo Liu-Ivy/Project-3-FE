@@ -17,10 +17,6 @@ img {
   border-radius: 50px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
-  margin: auto;
-  padding: 0px;
-  /* border: 1px solid white; */
-  background-color: rgb(58, 32, 32, 0.555);
+  margin-top: 40px;
 }

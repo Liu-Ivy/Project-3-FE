@@ -31,6 +31,7 @@ class NewPlan extends Component {
     .then(() => {
       this.props.handleSubmitClick()
     })
+    .catch((err)=>console.log(err))
   };
 
   handleChange = event => {
@@ -62,7 +63,7 @@ class NewPlan extends Component {
         <div className="field is-marginless is-paddingless">
           <label className="label is-marginless">Title</label>
             <div className="control">
-              <input className="input" type="text" value={title} onChange={this.handleChange}/>
+              <input className="input" type="text" name="title"value={title} onChange={this.handleChange}/>
             </div>
         </div>
         <div className="field has-addons is-marginless is-paddingless">
@@ -91,7 +92,7 @@ class NewPlan extends Component {
         <div className="field is-marginless is-paddingless">
           <label className="label is-marginless">Duration </label>
             <div>
-              <input className="input" type="duration" name="duration" value={duration} onChange={this.handleChange}/><br/>
+              <input className="input" type="text" name="duration" value={duration} onChange={this.handleChange}/><br/>
             </div>  
           </div>  
         <div className="field is-marginless is-paddingless">

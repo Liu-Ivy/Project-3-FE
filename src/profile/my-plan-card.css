@@ -1,17 +1,18 @@
-.handle-card{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-}
+/* .handle-card{
+  background-color: rgb(235, 225, 225, 0.5);
+  width: 100%;
+} */
 .all-card{
   width: 300px;
   height: 300px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  margin-left: 30px;
+  align-items: center; 
+}
+.my-plans{
+  background-color: rgb(235, 225, 225, 0.5);
+  width: 100%;
 }
 .button-card{
   display:flex;
