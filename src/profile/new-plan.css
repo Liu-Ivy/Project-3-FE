@@ -1,0 +1,18 @@
+.form-control{
+  border-radius: 50px;
+  width: 800px;
+  height: 650px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: gray;
+  margin: auto;
+  margin-top:-300px; 
+}
+
+.plan-img {
+  height: 100px;
+  width: 100;
+}
+

@@ -10,11 +10,13 @@ import './card.css'
 function TopicCard(props) {
   const bg = require(`../images/${props.image}`)
   return (
-    <a href={`./topics/${props.topic.toLowerCase()}`}>
-      <div className='topicCard' style ={{ backgroundImage: "url("+bg+")" }}>
-        <p>{props.topic}</p>
-      </div>
-    </a>
+    <div className="columns">
+      <a href={`./topics/${props.topic.toLowerCase()}`}>
+        <div className='topicCard cloumns' style ={{ backgroundImage: "url("+bg+")" }}>
+          <p>{props.topic}</p>
+        </div>
+      </a>
+    </div>
   )
 }
 

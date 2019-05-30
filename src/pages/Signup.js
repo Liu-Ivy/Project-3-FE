@@ -51,6 +51,11 @@ class Signup extends Component {
                 </p>
             </form>
           </div>
+          <footer class="hero-foot">
+            <div id="grid">
+
+            </div>
+          </footer>
       </div>
     );
   }

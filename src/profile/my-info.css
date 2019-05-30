@@ -1,0 +1,26 @@
+img {
+  height: '50px';
+  width: '50px';
+  border-radius: 50px;
+  border: 1px solid white;
+  margin:0;
+}
+.title{
+  margin: 0px;
+}
+.button{
+  margin-top: 10px;
+}
+.my-info {
+  width: 400px;
+  height: 400px;
+  border-radius: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+  padding: 0px;
+  /* border: 1px solid white; */
+  background-color: rgb(58, 32, 32, 0.555);
+}

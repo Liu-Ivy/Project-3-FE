@@ -2,6 +2,7 @@ import React, { Component } from "react";
 // import { Link } from "react-router-dom";
 import { withAuth } from "../lib/AuthProvider";
 import plan from '../lib/plan-service';
+import './new-plan.css'
 
 const style = {
   height: '80px',
@@ -56,34 +57,57 @@ class NewPlan extends Component {
  
     const { title, topic, description, imageUrl, duration, location  } = this.state;
     return (
-      <div>  
+      <div className="form-control">  
         <form onSubmit={this.handleFormSubmit}>
-          <label>title </label>
-          <input type="text" name="title" value={title} onChange={this.handleChange}/><br/>
-          <label type="text" >topic </label>
-          <select name="topic" required onChange={this.handleChange}>
-            <option value={topic}>Choose a Topic</option>
-            <option value="reading">Reading</option>
-            <option value="writing">Writing</option>
-            <option value="festival">Festival</option>
-            <option value="warmup-activities">Warmup Activities</option>
-            <option value="HSK">HSK</option>
-            <option value="tool-book">Tool Book</option>
-           </select> 
+        <div className="field is-marginless is-paddingless">
+          <label className="label is-marginless">Title</label>
+            <div className="control">
+              <input className="input" type="text" value={title} onChange={this.handleChange}/>
+            </div>
+        </div>
+        <div className="field has-addons is-marginless is-paddingless">
+          <div className="control is-expanded">
+            <label className="label is-marginless">Topic</label>
+            <div className="select">
+              <select name="topic" required onChange={this.handleChange}>
+                <option value={topic}>Choose a Topic</option>
+                <option value="reading">Reading</option>
+                <option value="writing">Writing</option>
+                <option value="festival">Festival</option>
+                <option value="warmup-activities">Warmup Activities</option>
+                <option value="HSK">HSK</option>
+                <option value="tool-book">Tool Book</option>
+              </select>
+            </div>
+          </div>
+        </div>
           {/* <input type="topic" name="topic" value={topic} onChange={this.handleChange}/><br/> */}
-          <label>description </label>
-          <input type="description" name="description" value={description} onChange={this.handleChange}/><br/>
-          <label>duration </label>
-          <input type="duration" name="duration" value={duration} onChange={this.handleChange}/><br/>
-          <label>location </label>
-          <input type="location" name="location" value={location} onChange={this.handleChange}/><br/>
-          
-          <label>Image</label>
-          <input type="file" onChange={this.fileOnchange}></input>
-          <img src={this.state.imageUrl} alt="" style={style}/>
-          
+        <div className="field is-marginless is-paddingless">
+          <label className="label is-marginless">Description</label>
+            <div className="control">
+              <input className="textarea" type="description" name="description" value={description} onChange={this.handleChange}/><br/>
+            </div>
+        </div>
+        <div className="field is-marginless is-paddingless">
+          <label className="label is-marginless">Duration </label>
+            <div>
+              <input className="input" type="duration" name="duration" value={duration} onChange={this.handleChange}/><br/>
+            </div>  
+          </div>  
+        <div className="field is-marginless is-paddingless">
+          <label className="label is-marginless">Location </label>
+            <div>
+              <input className="input" type="location" name="location" value={location} onChange={this.handleChange}/><br/>
+            </div>
+        </div>
+        <div>
+          <label className="label is-marginless">Image</label>
+          <input className="button is-info is-warning is-normal" style={{width: '400px'}} type="file" onChange={this.fileOnchange}></input>
+          <img className="plan-img"src={this.state.imageUrl} alt="" style={style}/>  
           {/* {disable ? <input type="submit" disabled></input> : <input type="submit"></input>} */}
-          <input type="submit" value='submit'/>
+          <input className="button is-warning is-outlined is-normal" type="submit" value='submit'/>
+        </div>
+          
         </form>
         
       </div>

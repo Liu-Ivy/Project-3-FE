@@ -1,7 +1,7 @@
 .nav-head{
   width: 100%;
 }
-.center, .column, .top, .right, .bottom, .left{
+.nav-bar{
    display: flex;
    flex-direction: row;
    justify-content: center;
@@ -13,15 +13,9 @@
 /* .column {
   padding: 0;
 } */
-.center-column{
+/* .center-column{
   flex-direction: column;
-}
-
-
-.top { align-items: flex-start; } 
-.right { justify-content: flex-end; }
-.bottom{ align-items: flex-end; }
-.left { justify-content: flex-start; }
+} */
 
 .single-spaced, .single-spaced * {
   line-height: 1;

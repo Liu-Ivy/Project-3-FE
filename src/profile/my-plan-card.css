@@ -1,0 +1,20 @@
+.handle-card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.all-card{
+  width: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-left: 30px;
+}
+.button-card{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

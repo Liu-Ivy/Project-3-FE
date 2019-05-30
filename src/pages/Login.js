@@ -44,7 +44,7 @@ class Login extends Component {
               value={password}
               onChange={this.handleChange}
             />
-            <input className="buttonds has-text-white  is-warning is-outlined is-nomral has-text-weight-bold" type="submit" value="Login" />
+            <input className="button has-text-white  is-warning is-outlined is-nomral has-text-weight-bold" type="submit" value="Login" />
           <p className="is-size-6 has-text-weight-normal has-text-white">
           Don't have account?
           <Link className="button has-text-white  is-warning is-outlined is-small has-text-weight-bold" to="/signup">Signup</Link>

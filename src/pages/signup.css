@@ -21,3 +21,8 @@
 .single-spaced, .single-spaced * {
   line-height: 3;
 } 
+@media (maz-width: 1024px){
+  .destop {
+    display: none;
+  }
+}

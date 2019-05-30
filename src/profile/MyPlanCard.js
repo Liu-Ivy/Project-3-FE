@@ -1,9 +1,10 @@
 import React from 'react';
+import './my-plan-card.css';
 
 const style = {
-  height: '80px',
-  width: '100px',
-  margin: '10px'
+  height: '120px',
+  width: '120px',
+  margin: '15px'
 }
 
 
@@ -12,15 +13,21 @@ const {_id, title, imageUrl} = props.plan;
   console.log(props.plan)
   
   return (
-    <div>
-      <a href={`../topic/${_id}`}>
-        <div className="plan-card">
+    <div className="handle-card">
+      <div className="all-card">
+        <a href={`../topic/${_id}`}>
+        <div>
           <p>{title}</p>
+        </div>
+        <div className="plan-card">
           <img src={imageUrl} alt="" style={style}/>
         </div>
-      </a>
-      <button onClick={()=>{props.handleEdit(props.index)}}>Edit</button>
-      <button onClick={()=>{props.handleDelete(props.plan)}}>Delete</button>
+        </a>
+        <div className="button-card">
+          <button className="button is-danger is-outlined is-normal" onClick={()=>{props.handleEdit(props.index)}}>Edit</button>
+          <button className="button is-warning is-outlined is-normal" onClick={()=>{props.handleDelete(props.plan)}}>Delete</button>
+        </div>
+      </div>
     </div>
 
 

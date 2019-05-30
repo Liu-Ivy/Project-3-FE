@@ -1,12 +1,12 @@
 import React from 'react';
 import plan  from '../lib/plan-service';
-import './profile.css';
+import '../pages/profile.css';
 import auth from '../lib/auth-service';
+import './my-info.css';
 
 const style = {
-  height: '80px',
-  width: '100px',
-  margin: '10px'
+  height: '180px',
+  width: '200px',
 }
 
 
@@ -40,10 +40,15 @@ fileOnchange = (event) => {
   render(){
     return (
         <div className="my-info">
-        <h1>Welcome {this.props.userInfo.username}</h1>
-          <img src={this.state.imageUrl} alt="" style={style}/>
-          <input type="file" onChange={this.fileOnchange}></input>
-            {/* {this.state.disable ? <input type="submit" disabled></input> : <input type="submit"></input>} */}
+          <div className="title">
+             <h1 className="title is-size-1 has-text-white is-uppercase has-text-weight-bold is-family-monospace ">Welcome {this.props.userInfo.username}</h1>
+          </div>
+          <div className="image">
+             <img src={this.state.imageUrl} alt="" style={style}/>
+          </div>
+          <div className="button is-warning is-outlined is-large" style={{width: '300px'}}>
+             <input type="file" onChange={this.fileOnchange} ></input>
+          </div>
         </div>
     )
   }
