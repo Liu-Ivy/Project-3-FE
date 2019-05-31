@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 
 const style = {
   height: '180px',
@@ -11,12 +12,12 @@ const {_id, title, imageUrl} = props.plan;
   console.log(props.plan)
   
   return (
-    <a href={`../topic/${_id}`}>
+    <Link to={`../topic/${_id}`}>
       <div className="plane-card">
         <p>{title}</p>
-        <img src={imageUrl} alt="" style={style}/>
+        <img src="https://blogs.lse.ac.uk/lsereviewofbooks/files/2016/02/Books-for-Survey.jpg" alt="" style={style}/>
       </div>
-    </a>
+    </Link>
   )
 }
 
