@@ -29,7 +29,7 @@ class EachTopic extends Component {
         <div className="column">
           <h2 className="title is-size-1 has-text-white is-uppercase has-text-weight-bold is-family-monospace">{this.props.match.params.topic.toUpperCase()}</h2>
         </div>
-        <div className="PlanCard column">
+        <div className="plan-card column">
           {plans.map((plan) => {
           if( plan.topic.toLowerCase() === this.props.match.params.topic) {
           return <PlanCard plan={plan} />

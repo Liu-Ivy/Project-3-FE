@@ -3,6 +3,17 @@
   background-repeat: no-repeat;
   height: 100vh;
   width: 100vw;
+  display: flex;
+
+}
+div.plan-card.column{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+div.plan-card{
+  text-align: center;
 }
 
 .button {
