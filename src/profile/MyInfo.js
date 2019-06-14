@@ -9,7 +9,6 @@ const style = {
   width: '200px',
 }
 
-
 class MyInfo extends React.Component{
 
   state = {
@@ -17,26 +16,26 @@ class MyInfo extends React.Component{
     disable: true,
   }
 
-fileOnchange = (event) => {
-  const file = event.target.files[0];
-  const uploadData = new FormData()
-  uploadData.append('photo', file)
+// fileOnchange = (event) => {
+//   const file = event.target.files[0];
+//   const uploadData = new FormData()
+//   uploadData.append('photo', file)
 
-  plan.imageUpload(uploadData)
-  .then((imageUrl) => {
-    console.log('imageUrl', imageUrl)
-    this.setState({
-      imageUrl,
-      disable: false,
-    })
-  })
-  .then(() => {
-    const newUser = this.props.userInfo;
-    newUser.imageUrl = this.state.imageUrl;
-    auth.updateUser(newUser)
-  })
-  .catch((error) => console.log(error))
-}
+//   plan.imageUpload(uploadData)
+//   .then((imageUrl) => {
+//     console.log('imageUrl', imageUrl)
+//     this.setState({
+//       imageUrl,
+//       disable: false,
+//     })
+//   })
+//   .then(() => {
+//     const newUser = this.props.userInfo;
+//     newUser.imageUrl = this.state.imageUrl;
+//     auth.updateUser(newUser)
+//   })
+//   .catch((error) => console.log(error))
+// }
   render(){
     return (
         <div className="my-info">
