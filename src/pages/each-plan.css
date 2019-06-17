@@ -4,15 +4,15 @@
 }
 
 .each-plan {
-  height: 600px;
-  width: 700px;
+  height: 700px;
+  width: 800px;
   background-color: rgb(233, 238, 243, 0.5);
   border-radius: 10px;
   display: flex;
   flex-direction: column;
   /* justify-content: center; */
   align-items: center;
-  margin: 60px 200px;
+  margin: auto;
 }
 .show-form{
   width: 500px;
